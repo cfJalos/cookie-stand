@@ -1,5 +1,68 @@
-main {
 
-display: inline;
+body {
+margin: auto;
+width: 960;
+text-align: center;
+background: #E7DBC0;
+color: #431F10;
+}
 
+header {
+  background: linear-gradient(#C87620, #E7DBC0 90%);
+  height: 90px;
+  width: 100%;
+  line-height: 80px;
+  font-size: 60px;
+  color: #431F10;
+  
+}
+
+a {
+  text-decoration: none;
+}
+header li {
+  display: inline;
+  padding: 10px 10px;
+  margin: 10px 10px;
+  font-size: 1.5rem;
+  
+}
+
+header a:hover {
+  color: #9b4c38;
+}
+
+.sales-data section {
+  margin: auto;
+  border: 3px solid #B3B3A0;
+  background-color: rgb(255,255,255);
+  border-radius: 10px;
+  width: 400px;
+  margin-bottom: 5px;
+  box-shadow: -4px -3px 8px  black;
+}
+.sales-data {
+  display: grid;
+  /* grid-template-columns: auto auto auto; */
+  margin: 100px 470px;
+ 
+}
+
+.sales-data h3 {
+    font-size: 2em;
+}
+
+.sales-data li {
+  font-size: 1.5em;
+  padding-bottom: 4px;
+}
+.dubai {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin-left: 370px;
+}
+
+footer p {
+  padding-bottom: 4px
+  ;
 }
