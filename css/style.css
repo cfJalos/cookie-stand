@@ -5,6 +5,7 @@ width: 960;
 text-align: center;
 background: #E7DBC0;
 color: #431F10;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -19,19 +20,29 @@ header {
 
 a {
   text-decoration: none;
+  color: #431F10;
 }
-header li {
+.nav li {
   display: inline;
   padding: 10px 10px;
   margin: 10px 10px;
   font-size: 1.5rem;
   
+  
+}
+
+
+nav a:hover {
+  color: #9b4c38;
 }
 
 header a:hover {
   color: #9b4c38;
 }
 
+#main {
+  margin-top: 50px;
+}
 .sales-data section {
   margin: auto;
   border: 3px solid #B3B3A0;
@@ -63,6 +74,56 @@ header a:hover {
 }
 
 footer p {
-  padding-bottom: 4px
-  ;
+  padding-bottom: 4px;
+  display: bottom;
+}
+
+#main h4 {
+  font-size: 1.5em;
+  color:#ece4d0;
+  background: #eb92348c
+}
+
+#main {
+  background-color: #E7DBC0;
+  border: 2px solid #c08b0f3d;
+  border-radius: 6px 6px 0 0 ;
+  border-bottom: none;
+  max-width: 960px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#body {
+  background-color: #E7DBC0;
+  border: 2px solid #c08b0f3d;
+  border-radius: ;
+  border-top: none;
+  max-width: 960px;
+  margin: auto;
+  margin-top: 0px;
+  padding-bottom: 20px
+
+}
+
+#location {
+  padding-bottom: 140px;
+}
+
+.body p {
+  line-height: 0.5;
+;
+}
+.header {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 20px 20px;
+}
+
+.storelocation {
+  font-size: 1.5em;
+}
+
+.storelocation a:hover {
+  color: #9b4c38;
 }
