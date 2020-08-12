@@ -153,7 +153,7 @@ function hourTotalSale() {
   //location table row
   var tableData = document.createElement('td');
   // give it content
-  tableData.textContent = `Totals`;
+  tableData.textContent = `Total per hour`;
   //append
   tableRow.appendChild(tableData);
 
