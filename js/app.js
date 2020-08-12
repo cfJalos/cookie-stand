@@ -2,24 +2,15 @@
 var hoursArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var overAllSales = 0;
 var salesArray = [overAllSales];
+
 var parentElement = document.getElementById('table');
-var sixAmTotal = 0;
-var sevenAmTotal = 0;
-var eightAmTotal = 0;
-var nineAmTotal = 0;
-var tenAmTotal = 0;
-var elevenAmTotal = 0;
-var twelvePmTotal = 0;
-var onePmTotal = 0;
-var TwoPmTotal = 0;
-var ThreePmTotal = 0;
-var fourPmTotal = 0;
-var fivePmTotal = 0;
-var sixPmTotal = 0;
-var sevenPmTotal = 0;
+
+var sixAmTotal = 0, sevenAmTotal = 0, eightAmTotal = 0, nineAmTotal = 0, tenAmTotal = 0, elevenAmTotal = 0, twelvePmTotal = 0, onePmTotal = 0, TwoPmTotal = 0, ThreePmTotal = 0, fourPmTotal = 0, fivePmTotal = 0, sixPmTotal = 0, sevenPmTotal = 0;
+
 var allStores = [];
+
 var AllStoresTotal = [sixAmTotal, sevenAmTotal, eightAmTotal, nineAmTotal, tenAmTotal, elevenAmTotal, twelvePmTotal, onePmTotal, TwoPmTotal, ThreePmTotal, fourPmTotal, fivePmTotal, sixPmTotal, sevenPmTotal];
-console.log(sixAmTotal)
+
 function getRandomNum(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
