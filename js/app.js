@@ -1,5 +1,6 @@
 'use strict'
 var hoursArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
 var overAllSales = 0;
 var salesArray = [overAllSales];
 
@@ -69,7 +70,7 @@ Stores.prototype.cookiesSales = function(){
 new Stores('Seattle', 23, 65 , 6.3);
 new Stores('Tokyo', 3, 24 , 1.2);
 new Stores('Dubai', 11, 38 , 3.7);
-new Stores('Paris', 20, 38 , 4.6);
+new Stores('Paris', 20, 38 , 2.3);
 new Stores('Lima', 2, 16 , 4.6);
 
 function generateHeader(){
