@@ -4,23 +4,22 @@ var overAllSales = 0;
 var salesArray = [overAllSales];
 var parentElement = document.getElementById('table');
 var sixAmTotal = 0;
-var sevenAmTotal = 0
-var eightAmTotal = 0
-var nineAmTotal = 0
-var tenAmTotal = 0
-var elevenAmTotal = 0
-var twelvePmTotal = 0
-var onePmTotal = 0
-var TwoPmTotal = 0
-var ThreePmTotal = 0
-var fourPmTotal = 0
-var fivePmTotal = 0
-var sixPmTotal = 0
-var sevenPmTotal = 0
+var sevenAmTotal = 0;
+var eightAmTotal = 0;
+var nineAmTotal = 0;
+var tenAmTotal = 0;
+var elevenAmTotal = 0;
+var twelvePmTotal = 0;
+var onePmTotal = 0;
+var TwoPmTotal = 0;
+var ThreePmTotal = 0;
+var fourPmTotal = 0;
+var fivePmTotal = 0;
+var sixPmTotal = 0;
+var sevenPmTotal = 0;
 var allStores = [];
 var AllStoresTotal = [sixAmTotal, sevenAmTotal, eightAmTotal, nineAmTotal, tenAmTotal, elevenAmTotal, twelvePmTotal, onePmTotal, TwoPmTotal, ThreePmTotal, fourPmTotal, fivePmTotal, sixPmTotal, sevenPmTotal];
-console.log(salesArray)
-
+console.log(sixAmTotal)
 function getRandomNum(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -58,36 +57,8 @@ Stores.prototype.cookiesSales = function(){
     var hour = getRandomNum(this.minCustomer, this.maxCustomer) * this.avgCookieSale;
     totalCookies += hour;
     salesArray[0] += Math.ceil(hour)
-    if (i === 0 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 1 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 2 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 3 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 4 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 5 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 6 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 7 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 8 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 9 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 10 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 11 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 12 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    } else if (i === 13 ) {
-      AllStoresTotal[i] += Math.ceil(hour);
-    }
-
+    //Add to All store per hour sale
+    AllStoresTotal[i] += Math.ceil(hour);
    // create a tdz
     var tableData = document.createElement('td');
 
