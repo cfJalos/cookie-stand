@@ -1,82 +1,177 @@
 'use strict'
 var hoursArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var overAllSales = 0;
+var salesArray = [overAllSales];
+var parentElement = document.getElementById('table');
+var sixAmTotal = 0;
+var sevenAmTotal = 0
+var eightAmTotal = 0
+var nineAmTotal = 0
+var tenAmTotal = 0
+var elevenAmTotal = 0
+var twelvePmTotal = 0
+var onePmTotal = 0
+var TwoPmTotal = 0
+var ThreePmTotal = 0
+var fourPmTotal = 0
+var fivePmTotal = 0
+var sixPmTotal = 0
+var sevenPmTotal = 0
+var allStores = [];
+var AllStoresTotal = [sixAmTotal, sevenAmTotal, eightAmTotal, nineAmTotal, tenAmTotal, elevenAmTotal, twelvePmTotal, onePmTotal, TwoPmTotal, ThreePmTotal, fourPmTotal, fivePmTotal, sixPmTotal, sevenPmTotal];
+console.log(salesArray)
 
-//random number generator
 function getRandomNum(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)); 
+  return Math.floor(Math.random() * (max - min + 1) + min); 
 }
 
-function cookiesSales(place){
+//contructor for store
 
-  var totalCookies = 0;
+function Stores (location, minCustomer, maxCustomer, avgCookieSale) {
+  this.location = location;
+  this.minCustomer = minCustomer;
+  this.maxCustomer = maxCustomer;
+  this.avgCookieSale = avgCookieSale;
+  
+  // push this to array
+  allStores.push(this);
+}
 
+Stores.prototype.cookiesSales = function(){
+
+  var tableRow = document.createElement('tr');
+  // appt it to the parent element
+  parentElement.appendChild(tableRow)
+
+  //location table row
+  var tableData = document.createElement('td');
+    // give it content
+    tableData.textContent = this.location;
+    //append
+    tableRow.appendChild(tableData);
+
+    var totalCookies = 0;
   for (var i = 0; i < hoursArray.length; i++) {
-   
   //random number per loop  
-    var hour = getRandomNum(place.minCustomer, place.maxCustomer) * place.avgCookieSale;
-        totalCookies += hour;
-    var parent = document.getElementById(`${place.location}`);
+    var hour = getRandomNum(this.minCustomer, this.maxCustomer) * this.avgCookieSale;
+    totalCookies += hour;
+    salesArray[0] += Math.ceil(hour)
+    if (i === 0 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 1 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 2 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 3 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 4 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 5 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 6 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 7 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 8 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 9 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 10 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 11 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 12 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    } else if (i === 13 ) {
+      AllStoresTotal[i] += Math.ceil(hour);
+    }
 
-    // create a DOM li
-    var listItem = document.createElement('li');
+   // create a tdz
+    var tableData = document.createElement('td');
 
-    // give it conent
-    listItem.textContent = `${hoursArray[i]}: ${Math.ceil(hour)} cookies`;
+    // give it content
+    tableData.textContent = `${Math.ceil(hour)}`;
 
     // append it to the DOM
-    parent.appendChild(listItem);
+    tableRow.appendChild(tableData);
 
-  }
-  //total Cookies
-  var listItemTotal = document.createElement('li');
-  listItemTotal.textContent = `Total: ${Math.ceil(totalCookies)} cookies`;
-  parent.appendChild(listItemTotal);
+    }
+    //total Cookies
+    var tableData = document.createElement('td');
+    tableData.textContent = Math.ceil(totalCookies);
+    tableRow.appendChild(tableData);
 }
 
-var seattle = {
-  location : 'Seattle',
-  minCustomer : 23 ,
-  maxCustomer : 65 ,
-  avgCookieSale : 6.3
+new Stores('Seattle', 23, 65 , 6.3);
+new Stores('Tokyo', 3, 24 , 1.2);
+new Stores('Dubai', 11, 38 , 3.7);
+new Stores('Paris', 20, 38 , 4.6);
+new Stores('Lima', 2, 16 , 4.6);
+
+function generateHeader(){
+  var tableRow = document.createElement('tr');
+  // //append tr to parent element
+  var tableHead = document.createElement('th');
+  // //give it content store location
+  tableHead.textContent = `Location`;
+  // append
+  tableRow.appendChild(tableHead);
+
+  for (var i = 0; i < hoursArray.length; i++) {
+    var tableHead = document.createElement('th');
+    //create tablerow
+    parentElement.appendChild(tableRow);
+    // // create tablehead
+    tableHead.textContent = hoursArray[i];
+    //append to parent
+    tableRow.appendChild(tableHead);
   }
 
+    // //append tr to parent element
+    var tableHead = document.createElement('th');
+    // //give it content store location
+    tableHead.textContent = `Total`;
+    // append
+    tableRow.appendChild(tableHead);
+    }
 
-cookiesSales(seattle);
+generateHeader();
+//table row
 
-var tokyo = {
-  location : 'Tokyo',
-  minCustomer : 3 ,
-  maxCustomer : 24 ,
-  avgCookieSale : 1.2,
+for(var i = 0; i < allStores.length; i++){
+  allStores[i].cookiesSales();
+}
+
+function hourTotalSale() {
+
+  var tableRow = document.createElement('tr');
+  // appt it to the parent element
+  parentElement.appendChild(tableRow)
+
+  //location table row
+  var tableData = document.createElement('td');
+  // give it content
+  tableData.textContent = `Totals`;
+  //append
+  tableRow.appendChild(tableData);
+
+  for (var i = 0; i < hoursArray.length; i++){
+   // create a td
+   var tableData = document.createElement('td');
+   // give it content
+   tableData.textContent = AllStoresTotal[i];
+   // append it to the DOM
+   tableRow.appendChild(tableData);
   }
+   // create a td
+   var tableData = document.createElement('td');
+   // give it content
+   tableData.textContent = salesArray[0];
 
-cookiesSales(tokyo);
+   // append it to the DOM
+   tableRow.appendChild(tableData);
 
-var dubai = {
-  location : 'Dubai',
-  minCustomer : 11 ,
-  maxCustomer : 38 ,
-  avgCookieSale : 3.7,
-  }
-
-cookiesSales(dubai);
-
-var paris = {
-  location : 'Paris',
-  minCustomer : 20 ,
-  maxCustomer : 38 ,
-  avgCookieSale : 4.6,
-  }
-
-cookiesSales(paris);
-
-var lima = {
-  location : 'Lima',
-  minCustomer : 2,
-  maxCustomer : 16 ,
-  avgCookieSale : 4.6,
-  }
-
-cookiesSales(lima);  
+}
+hourTotalSale()
