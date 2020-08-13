@@ -4,6 +4,8 @@ var hoursArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2p
 var overAllSales = 0;
 var salesArray = [overAllSales];
 
+var storeForm = document.getElementById('form');
+
 var parentElement = document.getElementById('table');
 
 var sixAmTotal = 0, sevenAmTotal = 0, eightAmTotal = 0, nineAmTotal = 0, tenAmTotal = 0, elevenAmTotal = 0, twelvePmTotal = 0, onePmTotal = 0, TwoPmTotal = 0, ThreePmTotal = 0, fourPmTotal = 0, fivePmTotal = 0, sixPmTotal = 0, sevenPmTotal = 0;
@@ -100,12 +102,6 @@ function generateHeader(){
     tableRow.appendChild(tableHead);
     }
 
-generateHeader();
-//table row
-
-for(var i = 0; i < allStores.length; i++){
-  allStores[i].cookiesSales();
-}
 
 function hourTotalSale() {
 
@@ -135,6 +131,30 @@ function hourTotalSale() {
 
    // append it to the DOM
    tableRow.appendChild(tableData);
+   
+}
+ // this is the JS DOM for form
 
+function handleSubmit(event){
+  event.preventDefault();
+
+  // collect information from the form
+  var location = event.target.location.value;
+  var minCustomer = event.target.minCustomer.value;
+  var maxCustomer = event.target.maxCustomer.value;
+  var avgCookieSale = event.target.avgCookieSale.value;
+  // run that information through the constructor 
+
+  new Stores(location, minCustomer, maxCustomer, avgCookieSale);
+  allStores[allStores.length - 1].cookiesSales();
+}  
+
+storeForm.addEventListener('submit', handleSubmit)
+
+generateHeader();
+//table row
+
+for(var i = 0; i < allStores.length; i++){
+  allStores[i].cookiesSales();
 }
 hourTotalSale()
