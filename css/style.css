@@ -16,11 +16,14 @@ header {
   color: #431F10;
 }
 
-header h1 {
+#logo {
   float: left;
   font-size: 2rem;
-  position: absolute;
   padding-top: 15px;
+  width: 200px;
+  height: 70px;
+  background-image: url("img/cutter.jpeg");
+  background-size: 100% 100%;
 }
 
 img {
@@ -31,7 +34,8 @@ a {
   color: #431F10;
 }
 .nav li {
-  display: inline-block;
+  text-align: right;
+  display: inline;
   margin: 10px 10px;
   font-size: 1.5rem;
 }
@@ -122,7 +126,7 @@ header a:hover {
 }
 .secondary-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 50px 200px;
 }
 .secondary-content img {
