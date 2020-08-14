@@ -144,8 +144,9 @@ function handleSubmit(event){
   var maxCustomer = event.target.maxCustomer.value;
   var avgCookieSale = event.target.avgCookieSale.value;
   // run that information through the constructor 
-
+  parentElement.innerHTML = '';
   new Stores(location, minCustomer, maxCustomer, avgCookieSale);
+  generateHeader();
   allStores[allStores.length - 1].cookiesSales();
 }  
 
