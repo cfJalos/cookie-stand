@@ -1,44 +1,60 @@
-
+* {
+  text-decoration: none;
+}
 body {
 margin: auto;
 width: 960;
 text-align: center;
-background: #E7DBC0;
+background: #e7dbc0;
 color: #431F10;
 font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-  background: linear-gradient(#C87620, #E7DBC0 90%);
-  height: 60px;
+nav {
+  background: linear-gradient(#C87620, #e7dbc0b9 80%);
   width: 100%;
-  font-size: 60px;
-  color: #431F10;
+  margin: 0; 
+ 
+}
+nav ul {
+  padding: 0px;
+  margin: 0 0 0 0;
+  margin-top: 80px;
+  list-style: none;
+  display: inline-flex;
 }
 
-#logo {
-  float: left;
-  font-size: 2rem;
-  padding-top: 15px;
-  width: 200px;
+nav li {
+  padding: 0px;
+  line-height: 70px;
+}
+
+nav img {
+  display: inline;;
+  margin-left: 30px;
+  border-radius: 7px;
   height: 70px;
-  background-image: url("img/cutter.jpeg");
-  background-size: 100% 100%;
+  width: 250px;
+  box-shadow: 
+  inset 0 -3em 3em rgba(0,0,0,0.1), 
+        0 0  0 0px rgb(255,255,255),
+        0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 
-img {
-  border-radius: 3px;
-}
-a {
-  text-decoration: none;
-  color: #431F10;
-}
-.nav li {
-  text-align: right;
+nav a {
+  width: 100px;
   display: inline;
-  margin: 10px 10px;
-  font-size: 1.5rem;
+  padding: 0px 40px;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color:  #431F10;
+  text-align: center;
+  margin-left: 50px;
+
 }
+
 
 
 nav a:hover {
@@ -49,8 +65,6 @@ header a:hover {
   color: #9b4c38;
 }
 
-#main {
-  margin-top: 50px;
 }
 .sales-data section {
   margin: auto;
@@ -73,12 +87,21 @@ header a:hover {
 
 #main {
   background-color: #E7DBC0;
-  border: 2px solid #c08b0f3d;
   border-radius: 6px 6px 0 0 ;
   border-bottom: none;
   max-width: 960px;
+  max-height: 450px;
   margin: auto;
   margin-top: 50px;
+  box-shadow: 
+  inset 0 -3em 3em rgba(0,0,0,0.1), 
+        0 0  0 0px rgb(255,255,255),
+        0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+#main img {
+  width: 960px;
+  height: 400px;
 }
 
 #body {
@@ -92,9 +115,10 @@ header a:hover {
 
 }
 
-#location {
-  margin-top: 100px;
-  padding-bottom: 140px;
+#location, a {
+  margin-top: 200px;
+  padding-bottom: 0px;
+  color: #431F10;
 }
 
 #location li:first-child{
@@ -111,33 +135,27 @@ header a:hover {
 }
 
 .bestHeader {
-  margin-top: 100px;
+  margin-top: 50px;
   font-weight: bold;
   font-size: 1.3em;
   margin-bottom: 50px;
   
 }
 
-.third-content img {
-  box-shadow: 
-  inset 0 -3em 3em rgba(0,0,0,0.1), 
-        0 0  0 0px rgb(255,255,255),
-        0.3em 0.3em 1em rgba(0,0,0,0.3);
-}
 .secondary-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 50px 200px;
+  margin: 20px 350px;
 }
 .secondary-content img {
   background-size: cover;
-  height: 282px;
-  width: 250px;
+  height: 375px;
+  width: 300px;
   padding: 0px;
   box-shadow: 
-       inset 0 -3em 3em rgba(0,0,0,0.1), 
-             0 0  0 0px rgb(255,255,255),
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
+  inset 0 -3em 3em rgba(0,0,0,0.1), 
+  0 0  0 0px rgb(255,255,255),
+  0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 .secondary-content h3 {
   padding-top: 30px;
@@ -148,11 +166,42 @@ header a:hover {
   padding: 20px 20px;
 }
 
+.third-content {
+  max-height: 480px;
+  margin-bottom: 50px;
+}
+.third-content img {
+  display: inline-flex;
+  height: 480px;
+  width: 400px;
+  margin-right: 30px;
+  box-shadow: 
+  inset 0 -3em 3em rgba(0,0,0,0.1), 
+        0 0  0 0px rgb(255,255,255),
+        0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
 
+.myBox {
+  display: inline-flex;
+  border: none;
+  padding: 5px;
+  margin-left: 30px;
+  font: 24px/36px sans-serif;
+  height: 480px;
+  width: 600px;
+  overflow: scroll;
+  vertical-align: 450px;
+  box-shadow: 
+  inset 0 -3em 3em rgba(0,0,0,0.1), 
+        0 0  0 0px rgb(255,255,255),
+        0.3em 0.3em 1em rgba(0,0,0,0.3);
+  }
+  
 .storelocation a:hover {
   color: #9b4c38;
 }
 /* footer */
+
 footer {
   width: 100%;
   height: 200px;
@@ -171,6 +220,7 @@ footer a {
   color: #B3B3A0;
   line-height: 2em;
   font-size: .8em;
+  margin-bottom: 0px;
   
 }
 
@@ -185,11 +235,15 @@ footer li:first-child {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   margin: 0 250px;
+  margin-bottom: ;
   line-height: 1.5em;
 }
 
+address {
+  padding-bottom: 50px;
+}
 
 /* table */
 
